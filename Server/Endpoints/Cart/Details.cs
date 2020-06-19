@@ -21,6 +21,7 @@ namespace ShoppingCartStarter.Server.Endpoints.Cart
         {
             // in reality we'd retrieve a specific cart (for the current user/session) but for demo
             // purposes this just pulls back the first cart it finds
+            
             var cart = await _context.Carts
                 .Include(x => x.LineItems)
                 .FirstOrDefaultAsync(cancellationToken: cancellationToken);

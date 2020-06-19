@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCartStarter.Shared.Cart;
+using ShoppingCartStarter.Shared.Cart.LineItem;
 
 namespace ShoppingCartStarter.Server.Endpoints.Cart
 {
@@ -20,6 +21,20 @@ namespace ShoppingCartStarter.Server.Endpoints.Cart
         {
             var cart = await _mediator.Send(query);
             return Ok(cart);
+        }
+
+        [HttpDelete("lines/{id}")]
+        public async Task<IActionResult> Delete(Delete.Command command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
+
+        [HttpPut("lines")]
+        public async Task<IActionResult> Update([FromBody]Update.Command command)
+        {
+            await _mediator.Send(command);
+            return Ok();
         }
     }
 }
