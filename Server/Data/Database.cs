@@ -41,7 +41,7 @@ namespace ShoppingCartStarter.Server.Data
                     new LineItem {Image = "test-image.jpg", Name = "Small White T-shirt", Price = 19.50m, Quantity = 1},
                     new LineItem {Image = "test-image.jpg", Name = "Smart Speaker", Price = 23.00m, Quantity = 1},
                     new LineItem {Image = "test-image.jpg", Name = "Dumb Speaker", Price = 99.00m, Quantity = 3},
-                    new LineItem {Image = "test-image.jpg", Name = "Giraffe Poster", Price = 9.00m, Quantity = 20}
+                    new LineItem {Image = "test-image.jpg", Name = "Giraffe Poster", Price = 9.00m, Quantity = 4}
                 });
             }
 
