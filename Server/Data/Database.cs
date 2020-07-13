@@ -17,14 +17,14 @@ namespace ShoppingCartStarter.Server.Data
         {
             using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope();
             using var context = serviceScope.ServiceProvider.GetRequiredService<StoreContext>();
-
+            
             context.Database.Migrate();
 
             ShoppingCart cart;
             if (context.Carts.Any())
             {
                 cart = context.Carts
-                    .Include(x => x.LineItems)
+                    .Include(x=>x.LineItems)
                     .FirstOrDefault();
             }
             else
