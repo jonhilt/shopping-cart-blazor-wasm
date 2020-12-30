@@ -17,14 +17,14 @@ namespace ShoppingCartStarter.Server.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Sqlite:Autoincrement", true);
 
             modelBuilder.Entity("ShoppingCartStarter.Server.DomainModels.LineItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasAnnotation("Sqlite:Autoincrement", true);
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +53,7 @@ namespace ShoppingCartStarter.Server.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasAnnotation("Sqlite:Autoincrement", true);
 
                     b.Property<int>("SessionId")
                         .HasColumnType("int");

@@ -30,7 +30,7 @@ namespace ShoppingCartStarter.Server
             services.AddRazorPages();
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<StoreContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
