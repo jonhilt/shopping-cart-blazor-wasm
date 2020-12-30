@@ -32,3 +32,4 @@ _ReSharper*/
 packages/
 /.idea/.idea.ShoppingCartStarter/.idea
 /.idea
+Server/BlazorShoppingCartStarter.db
