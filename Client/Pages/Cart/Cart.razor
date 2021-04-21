@@ -1,0 +1,11 @@
+@page "/cart"
+@inherits CartBase
+
+<h3>Your Shopping Cart</h3>
+
+@if(Model != null){
+    @foreach (var line in Model.Items)
+    {
+        <Item Details="@line"/>
+    }
+}
