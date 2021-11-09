@@ -1,9 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using ShoppingCartStarter.Server.DomainModels;
 
 namespace ShoppingCartStarter.Server.Data
