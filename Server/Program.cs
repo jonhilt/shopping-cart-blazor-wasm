@@ -1,4 +1,7 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using ShoppingCartStarter.Server.Data;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddDbContext<StoreContext>(options=>options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -13,6 +18,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+    Database.InitialiseDatabase(app, app.Environment);
 }
 else
 {
