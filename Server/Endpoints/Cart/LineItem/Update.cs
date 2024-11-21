@@ -8,7 +8,7 @@ using ShoppingCartStarter.Shared.Cart.LineItem;
 
 namespace ShoppingCartStarter.Server.Endpoints.Cart.LineItem
 {
-    public class UpdateHandler : AsyncRequestHandler<Update.Command>
+    public class UpdateHandler : IRequestHandler<Update.Command>
     {
         private readonly StoreContext _context;
 
@@ -17,7 +17,7 @@ namespace ShoppingCartStarter.Server.Endpoints.Cart.LineItem
             _context = context;
         }
 
-        protected override async Task Handle(Update.Command request, CancellationToken cancellationToken)
+        public async Task Handle(Update.Command request, CancellationToken cancellationToken)
         {
             // find the cart (in reality we'd use the customer's id or similar to do this)
             var cart = await _context.Carts
