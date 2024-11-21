@@ -1,0 +1,19 @@
+﻿@using ShoppingCartStarter.Shared.Cart
+
+<div class="d-flex mt-4 border-bottom pb-4">
+    <div class="flex-shrink-0">
+        <img src="/images/@Details.Image" altText="@Details.Name"
+             class="mr-3" alt="Smart Speaker" />
+    </div>
+    <div class="flex-grow-1 ms-3">
+        <h2 class="">@Details.Name</h2>
+    </div>
+    <div>
+        £@Details.Price
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Details.Model.LineItem Details { get; set; }
+}

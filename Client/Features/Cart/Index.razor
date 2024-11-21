@@ -1,0 +1,11 @@
+﻿@page  "/cart"
+@using ShoppingCartStarter.Client.Features.Cart.Components
+
+<h3>Your Shopping Cart</h3>
+
+@if(Model != null){
+    @foreach (var line in Model.Items)
+    {
+        <Item details="@line"/>
+    }
+}
